@@ -17,7 +17,7 @@ namespace Tests
             var report = await ExcelReport.GenerateExcel(data);
 
             string filename = "Excel Report";
-            FileStream file = new FileStream($"C:/temp/{filename}.xlsx", FileMode.Create);
+            FileStream file = new FileStream($"{System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}/{filename}.xlsx", FileMode.Create);
             file.Write(report);
             file.Close();
         }
